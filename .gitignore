@@ -34,3 +34,4 @@ build/
 
 ### GigaIDE ###
 .gigaide/
+compose.yaml
