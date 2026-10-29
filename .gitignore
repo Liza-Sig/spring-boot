@@ -34,5 +34,4 @@ build/
 
 ### GigaIDE ###
 .gigaide/
-compose.yaml
 logs/
