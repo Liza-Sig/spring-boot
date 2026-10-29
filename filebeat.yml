@@ -1,0 +1,13 @@
+
+filebeat.inputs:
+  - type: filestream
+    id: springboot-logs
+    enabled: true
+    paths:
+      - /logs/app.log
+    fields:
+      service: spring-boot-demo
+    fields_under_root: true
+
+output.logstash:
+  hosts: ["logstash:5044"]
