@@ -1,0 +1,16 @@
+
+groups:
+  - name: spring-boot-alerts
+    rules:
+      - alert: HighMemoryUsage
+        expr: |
+          sum(jvm_memory_used_bytes{application="spring-boot-demo", area="heap"})
+          /
+          max(jvm_memory_max_bytes{application="spring-boot-demo", area="heap"})
+          > 0.50
+        for: 15s
+        labels:
+          severity: warning
+        annotations:
+          summary: "High JVM memory usage"
+          description: "JVM heap memory usage is above 50%."

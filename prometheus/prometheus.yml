@@ -1,0 +1,13 @@
+
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+rule_files:
+  - "rules/alert-rules.yml"
+
+scrape_configs:
+  - job_name: "spring-boot-demo"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ["app:8080"]
