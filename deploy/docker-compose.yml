@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: myapp:latest
+    container_name: myapp
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_APPLICATION_JSON: '{"netology":{"profile":{"dev":false}}}'
+    restart: unless-stopped
